@@ -26,8 +26,10 @@
                 <img src="{{ user.profile_image_url }}" />
                 <div class="name">{{ user.name }}</div>
                 <div class="secondLine">
-                    <span class="username"><a href="http://twitter.com/{{ user.screen_name }}" target="_blank">@{{ user.screen_name }}</a></span> -
-                    <span class="location">{{ user.location }}</span>
+                    <span class="username"><a href="http://twitter.com/{{ user.screen_name }}" target="_blank">@{{ user.screen_name }}</a></span>
+                    {{#user.location }}
+                    <span class="location"> - {{ user.location }}</span>
+                    {{/user.location }}
                 </div>
             </div>
         </script>

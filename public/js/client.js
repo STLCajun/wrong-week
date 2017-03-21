@@ -5,13 +5,13 @@ socket.on('connect', function() {
        if (err) {
            alert(err);
        } else {
-           console.log('Connected');
+           // console.log('Connected');
        }
    })
 });
 
 socket.on('disconnect', function() {
-    console.log('Disconnected from server');
+    // console.log('Disconnected from server');
 });
 
 socket.on('newTweet', function(tweet) {
