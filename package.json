@@ -1,0 +1,22 @@
+{
+  "name": "wrong-week",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "hbs": "^4.0.1",
+    "lodash": "^4.17.4",
+    "socket.io": "^1.7.3",
+    "twitter": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
