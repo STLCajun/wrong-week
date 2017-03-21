@@ -4,6 +4,7 @@ const twitter = require('./../twitter/twitter.js');
 class Tweets {
     constructor () {
         this.tweets = {};
+        this.checkTweets();
     }
 
     updateTweet(status) {

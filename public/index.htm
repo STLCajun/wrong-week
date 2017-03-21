@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wrong Week</title>
+        <link type="text/css" rel="stylesheet" href="/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    </head>
+    <body>
+        <div class="center">
+            <div class="bubble">
+
+            </div>
+
+            <div id="description">
+                This page automatically searches the latest tweets for things people picked the wrong week to do.  This is based on the famous Lloyd Bridges line from Airplane.  I originally built the first version of this back in 2009, and in the last few years I've let it sit dormant.  I've decided to bring it back as a pet project - with a few upgrades in the near future.  Keep an eye out for more.
+            </div>
+        </div>
+        <footer>
+            WrongWeek.com - Created By Luther Lowry - &copy; Copyright 2009-2017.  All rights reserved.<br />
+            <small>Likeness of Lloyd Bridges used without permission.</small>
+        </footer>
+
+        <script id="bubble-content-template" type="text/template">
+            <h1>{{ text }}</h1>
+            <div class="userinfo">
+                <img src="{{ user.profile_image_url }}" />
+                <div class="name">{{ user.name }}</div>
+                <div class="secondLine">
+                    <span class="username"><a href="http://twitter.com/{{ user.screen_name }}" target="_blank">@{{ user.screen_name }}</a></span> -
+                    <span class="location">{{ user.location }}</span>
+                </div>
+            </div>
+        </script>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/libs/jquery.min.js"></script>
+        <script src="/js/libs/moment.js"></script>
+        <script src="/js/libs/mustache.js"></script>
+        <script src="/js/client.js"></script>
+    </body>
+</html>
