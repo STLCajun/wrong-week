@@ -21,12 +21,12 @@ class Tweets {
     }
 
     checkTweets() {
-        console.log('checking tweets');
+
         var string = '" I picked the wrong week to" OR " we picked the wrong week to"';
         twitter.getResults(string).then((tweet) => {
             this.updateTweet(tweet);
         }, (err) => {
-            console.log('There was a problem', err);
+            //console.log('There was a problem', err);
         });
     }
 }

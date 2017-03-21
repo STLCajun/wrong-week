@@ -1,5 +1,6 @@
 require('./config/config');
 const http = require('http');
+const path = require('path');
 const express = require('express');
 const {Tweets} = require('./utils/tweets');
 const socketIO = require('socket.io');
@@ -17,12 +18,12 @@ hbs.registerPartials(__dirname + '/views/partials');
 var tweets = new Tweets();
 
 app.get('/', (req, res) => {
-    res.render('homepage', tweets.getTweets());
+    res.sendFile(path.join(__dirname + '/public/index.htm'));
 });
 
 io.on('connection', (socket) => {
     socket.on('join', (params, callback) => {
-        console.log('user connected');
+        //console.log('user connected');
     });
 
     io.emit('newTweet', tweets.getTweets());
@@ -32,7 +33,7 @@ io.on('connection', (socket) => {
     }, 30000);
 
     socket.on('disconnect', (params, callback) => {
-        console.log('user disconnected');
+        // console.log('user disconnected');
     });
 });
 
