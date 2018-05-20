@@ -21,6 +21,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/index.htm'));
 });
 
+app.get('/text', (req, res) => {
+    var tweet = tweets.tweets.text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
+    res.send(tweet);
+});
+
 io.on('connection', (socket) => {
     socket.on('join', (params, callback) => {
         //console.log('user connected');
